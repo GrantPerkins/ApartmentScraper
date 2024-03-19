@@ -9,10 +9,10 @@ import org.perkins.scraper.FloorplanScraper;
 import java.util.Map;
 
 // Handler value: example.Handler
-public class Handler implements RequestHandler<Map<String, String>, Void> {
+public class Handler implements RequestHandler<Map<String, Object>, Void> {
 
     @Override
-    public Void handleRequest(Map<String, String> event, Context context) {
+    public Void handleRequest(Map<String, Object> event, Context context) {
         LambdaLogger logger = context.getLogger();
         FloorplanScraper fpScraper = new FloorplanScraper();
         ApartmentDynamoDB dynamoDB = new ApartmentDynamoDB();
